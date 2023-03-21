@@ -34,3 +34,7 @@ vim.o.clipboard="unnamedplus"
 
 -- undo
 vim.o.undofile=true
+
+-- splitting
+vim.opt.splitbelow = true
+vim.opt.splitright = true
