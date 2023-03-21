@@ -52,6 +52,18 @@ require('lazy').setup({
     },
   },
 
+  {
+     "jay-babu/mason-null-ls.nvim",
+     event = { "BufReadPre", "BufNewFile", "BufWritePre" },
+     dependencies = {
+       "williamboman/mason.nvim",
+       "jose-elias-alvarez/null-ls.nvim",
+     },
+--     config = function()
+--       require("your.null-ls.config") -- require your null-ls config here (example below)
+--     end,
+  },
+
   { -- Autocompletion
     'hrsh7th/nvim-cmp',
     dependencies = { 'hrsh7th/cmp-nvim-lsp', 'L3MON4D3/LuaSnip', 'saadparwaiz1/cmp_luasnip' },
