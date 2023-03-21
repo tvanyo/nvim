@@ -15,8 +15,11 @@ vim.wo.relativenumber = true
 vim.opt.cursorline=true
 vim.opt.cursorlineopt="number"
 vim.cmd "highlight clear CursorLine"
-vim.cmd "highlight LineNr cterm=NONE ctermfg=172"
-vim.cmd "highlight CursorLineNr ctermbg=172 ctermfg=255"
+vim.o.termguicolors=true
+vim.cmd "highlight LineNr gui=NONE guifg=orange"
+vim.cmd "highlight CursorLineNr guibg=orange guifg=black"
+--vim.cmd "highlight LineNr cterm=NONE ctermfg=172"
+--vim.cmd "highlight CursorLineNr ctermbg=172 ctermfg=255"
 
 -- Search
 vim.opt.hlsearch=true
@@ -28,7 +31,6 @@ vim.o.smartcase = true
 vim.opt.encoding = "utf-8"
 vim.o.mouse = "a"
 vim.o.clipboard="unnamedplus"
-vim.o.termguicolors=true
 
 -- undo
 vim.o.undofile=true
