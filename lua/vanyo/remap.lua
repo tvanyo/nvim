@@ -6,8 +6,10 @@ vim.keymap.set("n", "<C-H>", "<C-W><C-H>", { noremap = true, desc = "Move to lef
 
 -- Moving between terminal and non-terminal windows
 -- Source: https://github.com/akinsho/toggleterm.nvim
+vim.keymap.set("n", "tt", ":ToggleTerm<CR>", { noremap = true, desc = "toggle terminal" })
 function _G.set_terminal_keymaps()
 	local opts = { buffer = 0 }
+	-- Want to keep <esc> for vim mode in terminal, so need to use 'jk'
 	--vim.keymap.set("t", "<esc>", [[<C-\><C-n>]], opts)
 	vim.keymap.set("t", "jk", [[<C-\><C-n>]], opts)
 	vim.keymap.set("t", "<C-h>", [[<Cmd>wincmd h<CR>]], opts)
