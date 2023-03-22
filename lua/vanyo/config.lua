@@ -41,6 +41,8 @@ require("onedark").setup({
 })
 require("onedark").load()
 
+require("toggleterm").setup({})
+
 -- [[ Configure Telescope ]]
 -- See `:help telescope` and `:help telescope.setup()`
 require("telescope").setup({

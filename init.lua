@@ -53,6 +53,10 @@ require("lazy").setup({
 	},
 
 	{
+		{ "akinsho/toggleterm.nvim", version = "*", config = true },
+	},
+
+	{
 		"jay-babu/mason-null-ls.nvim",
 		event = { "BufReadPre", "BufNewFile", "BufWritePre" },
 		dependencies = {
