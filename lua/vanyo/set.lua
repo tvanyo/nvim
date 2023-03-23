@@ -16,8 +16,8 @@ vim.opt.cursorline = true
 vim.opt.cursorlineopt = "number"
 vim.cmd("highlight clear CursorLine")
 vim.o.termguicolors = true
-vim.cmd("highlight LineNr gui=NONE guifg=orange")
-vim.cmd("highlight CursorLineNr guibg=orange guifg=black")
+vim.cmd("highlight LineNr gui=NONE guifg=grey")
+vim.cmd("highlight CursorLineNr guibg=NONE guifg=orange")
 --vim.cmd "highlight LineNr cterm=NONE ctermfg=172"
 --vim.cmd "highlight CursorLineNr ctermbg=172 ctermfg=255"
 
