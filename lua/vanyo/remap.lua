@@ -36,6 +36,8 @@ vim.keymap.set("i", ";t", "<esc>gg", { noremap = true })
 vim.keymap.set("i", ";b", "<esc>G", { noremap = true })
 vim.keymap.set("n", "<leader>t", "<esc>gg", { noremap = true })
 vim.keymap.set("n", "<leader>b", "<esc>G", { noremap = true })
+vim.keymap.set("v", "<leader>t", "<esc>gg", { noremap = true })
+vim.keymap.set("v", "<leader>b", "<esc>G", { noremap = true })
 
 -- Just save damn it
 vim.keymap.set("i", ":w", "<esc>:w<CR>", { noremap = true })
