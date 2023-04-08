@@ -30,8 +30,8 @@ null_ls.setup({
 		-- python
 		formatting.black,
 		formatting.isort,
-		-- setup flake8 to ignore "Too many # for block comment" error
-		diagnostics.flake8.with({ extra_args = { "--max-line-length", "88", "--ignore", "E266" } }),
+		-- setup flake8 to ignore "Too many # for block comment" error & line length errors (using Black)
+		diagnostics.flake8.with({ extra_args = { "--max-line-length", "88", "--ignore", "E266,E501" } }),
 	},
 	-- configure format on save
 	on_attach = function(current_client, bufnr)
