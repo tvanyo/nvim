@@ -201,7 +201,11 @@ end
 local servers = {
 	-- clangd = {},
 	-- gopls = {},
-	pyright = {},
+	pyright = {
+		python = {
+			analysis = {diagnosticMode = 'openFilesOnly'}
+		},
+	},
 	-- rust_analyzer = {},
 	-- tsserver = {},
 
