@@ -97,6 +97,15 @@ require("lazy").setup({
 		},
 	},
 
+	{ -- floating ui for cmdline
+		"folke/noice.nvim",
+		event = "VeryLazy",
+		dependencies = {
+			"MunifTanjim/nui.nvim",
+			"rcarriga/nvim-notify",
+		},
+	},
+
 	{ -- Theme inspired by Atom
 		"navarasu/onedark.nvim",
 		priority = 1000,
