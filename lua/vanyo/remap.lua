@@ -34,13 +34,16 @@ vim.keymap.set("n", "<C-d>", "<C-d>zz", { noremap = true })
 vim.keymap.set("n", "<C-u>", "<C-u>zz", { noremap = true })
 vim.keymap.set("i", ";t", "<esc>gg", { noremap = true })
 vim.keymap.set("i", ";b", "<esc>G", { noremap = true })
-vim.keymap.set("n", "<leader>t", "<esc>gg", { noremap = true })
+-- vim.keymap.set("n", "<leader>t", "<esc>gg", { noremap = true })
 vim.keymap.set("n", "<leader>b", "<esc>G", { noremap = true })
 vim.keymap.set("v", "<leader>t", "<esc>gg", { noremap = true })
 vim.keymap.set("v", "<leader>b", "<esc>G", { noremap = true })
 
+-- NvimTree
+vim.keymap.set("n", "<leader>t", ":NvimTreeFocus<CR>", { noremap = true })
+
 -- Just save damn it
-vim.keymap.set("i", ":w", "<esc>:w<CR>", { noremap = true })
+-- vim.keymap.set("i", ":w", "<esc>:w<CR>", { noremap = true })
 
 -- search stuff
 vim.keymap.set("n", "<leader>/", ":noh<CR>", { noremap = true, desc = "turn off highlighting" })
