@@ -54,11 +54,51 @@ require("noice").setup({
 	},
 	-- you can enable a preset for easier configuration
 	presets = {
-		bottom_search = true, -- use a classic bottom cmdline for search
-		command_palette = true, -- position the cmdline and popupmenu together
+		bottom_search = false, -- use a classic bottom cmdline for search
+		command_palette = false, -- position the cmdline and popupmenu together
 		long_message_to_split = true, -- long messages will be sent to a split
 		inc_rename = false, -- enables an input dialog for inc-rename.nvim
 		lsp_doc_border = false, -- add a border to hover docs and signature help
+	},
+})
+
+-- Configure cmdline popup
+local Popup = require("nui.popup")
+local popup = Popup({
+	position = {
+		row = "50%",
+		col = "50%",
+	},
+	size = {
+		width = 80,
+		height = 40,
+	},
+	enter = true,
+	focusable = true,
+	zindex = 50,
+	relative = "editor",
+	border = {
+		padding = {
+			top = 2,
+			bottom = 2,
+			left = 3,
+			right = 3,
+		},
+		style = "rounded",
+		text = {
+			top = " I am top title ",
+			top_align = "center",
+			bottom = "I am bottom title",
+			bottom_align = "left",
+		},
+	},
+	buf_options = {
+		modifiable = true,
+		readonly = false,
+	},
+	win_options = {
+		winblend = 10,
+		winhighlight = "Normal:Normal,FloatBorder:FloatBorder",
 	},
 })
 
