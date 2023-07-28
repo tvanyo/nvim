@@ -274,9 +274,9 @@ local servers = {
 	-- clangd = {},
 	-- gopls = {},
 	pyright = {
-		--	python = {
-		--		analysis = {diagnosticMode = 'openFilesOnly'}
-		--	},
+			python = {
+				analysis = {diagnosticMode = 'openFilesOnly'}
+			},
 	},
 	-- rust_analyzer = {},
 	-- tsserver = {},
@@ -288,6 +288,9 @@ local servers = {
 		},
 	},
 }
+
+-- Setup figet lua configuration
+--require("fidget").setup()
 
 -- Setup neovim lua configuration
 require("neodev").setup()
