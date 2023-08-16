@@ -43,6 +43,40 @@ require("onedark").load()
 
 require("toggleterm").setup({})
 
+-- Config for neorg
+require("neorg").setup({
+	load = {
+		["core.defaults"] = {}, -- Loads default behaviour
+		--	["core.concealer"] = {}, -- Adds pretty icons to your documents
+		["core.dirman"] = { -- Manages Neorg workspaces
+			config = {
+				workspaces = {
+					notes = "~/notes",
+				},
+			},
+		},
+		["core.concealer"] = {
+			config = {
+				icons = {
+					todo = {
+						done = { icon = "✓" },
+						uncertain = { icon = "⁇" },
+						on_hold = { icon = "⏸" },
+						undone = { icon = " " },
+					},
+				},
+			},
+		},
+		["core.keybinds"] = {
+			config = {
+				hook = function(keybinds)
+					keybinds.remap_key("norg", "n", "<C-Space>", "<Leader>t")
+				end,
+			},
+		},
+	},
+})
+
 require("noice").setup({
 	lsp = {
 		-- override markdown rendering so that **cmp** and other plugins use **Treesitter**

@@ -50,13 +50,17 @@ require("lazy").setup({
 
 			-- Useful status updates for LSP
 			-- NOTE: `opts = {}` is the same as calling `require('fidget').setup({})`
---			{ "j-hui/fidget.nvim" },
+			--			{ "j-hui/fidget.nvim" },
 
 			-- Additional lua configuration, makes nvim stuff amazing!
 			"folke/neodev.nvim",
 		},
 	},
-
+	{
+		"nvim-neorg/neorg",
+		build = ":Neorg sync-parsers",
+		dependencies = { "nvim-lua/plenary.nvim" },
+	},
 	{
 		{ "akinsho/toggleterm.nvim", version = "*", config = true },
 	},
@@ -172,12 +176,12 @@ require("lazy").setup({
 		version = "*",
 		lazy = false,
 		dependencies = {
-		  "nvim-tree/nvim-web-devicons",
+			"nvim-tree/nvim-web-devicons",
 		},
 		config = function()
-		  require("nvim-tree").setup {}
+			require("nvim-tree").setup({})
 		end,
-	}
+	},
 	-- NOTE: Next Step on Your Neovim Journey: Add/Configure additional "plugins" for kickstart
 	--       These are some example plugins that I've included in the kickstart repository.
 	--       Uncomment any of the lines below to enable them.
