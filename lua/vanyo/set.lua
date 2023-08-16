@@ -39,3 +39,6 @@ vim.o.undofile = true
 -- splitting
 vim.opt.splitbelow = true
 vim.opt.splitright = true
+
+-- neorg
+vim.opt.conceallevel = 3
