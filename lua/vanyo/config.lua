@@ -196,6 +196,7 @@ require("nvim-treesitter.configs").setup({
 		"regex",
 		"markdown",
 		"markdown_inline",
+		"sql",
 	},
 
 	-- Autoinstall languages that are not installed. Defaults to false (but you can change for yourself!)
@@ -318,9 +319,9 @@ local servers = {
 	-- clangd = {},
 	-- gopls = {},
 	pyright = {
-			python = {
-				analysis = {diagnosticMode = 'openFilesOnly'}
-			},
+		python = {
+			analysis = { diagnosticMode = "openFilesOnly" },
+		},
 	},
 	-- rust_analyzer = {},
 	-- tsserver = {},
