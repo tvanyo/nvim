@@ -61,9 +61,6 @@ require("lazy").setup({
 		build = ":Neorg sync-parsers",
 		dependencies = { "nvim-lua/plenary.nvim" },
 	},
-	{
-		{ "akinsho/toggleterm.nvim", version = "*", config = true },
-	},
 
 	{
 		"jay-babu/mason-null-ls.nvim",
@@ -137,10 +134,8 @@ require("lazy").setup({
 		"lukas-reineke/indent-blankline.nvim",
 		-- Enable `lukas-reineke/indent-blankline.nvim`
 		-- See `:help indent_blankline.txt`
-		opts = {
-			char = "┊",
-			show_trailing_blankline_indent = false,
-		},
+		main = "ibl",
+		opts = {},
 	},
 
 	-- "gc" to comment visual regions/lines
