@@ -1,8 +1,14 @@
 -- Window movement
-vim.keymap.set("n", "<C-J>", "<C-W><C-J>", { noremap = true, desc = "Move to lower panel" })
-vim.keymap.set("n", "<C-K>", "<C-W><C-K>", { noremap = true, desc = "Move to upper panel" })
-vim.keymap.set("n", "<C-L>", "<C-W><C-L>", { noremap = true, desc = "Move to right panel" })
-vim.keymap.set("n", "<C-H>", "<C-W><C-H>", { noremap = true, desc = "Move to left panel" })
+vim.keymap.set("n", "<C-j>", "<C-W>j", { noremap = true, desc = "Move to lower panel" })
+vim.keymap.set("n", "<C-k>", "<C-W>k", { noremap = true, desc = "Move to upper panel" })
+vim.keymap.set("n", "<C-l>", "<C-W>l", { noremap = true, desc = "Move to right panel" })
+vim.keymap.set("n", "<C-h>", "<C-W>h", { noremap = true, desc = "Move to left panel" })
+
+-- Resize window using <ctrl> arrow keys
+vim.keymap.set("n", "<A-Up>", "<cmd>resize +2<cr>", { desc = "Increase window height" })
+vim.keymap.set("n", "<A-Down>", "<cmd>resize -2<cr>", { desc = "Decrease window height" })
+vim.keymap.set("n", "<A-Left>", "<cmd>vertical resize -2<cr>", { desc = "Decrease window width" })
+vim.keymap.set("n", "<A-Right>", "<cmd>vertical resize +2<cr>", { desc = "Increase window width" })
 
 -- Moving between terminal and non-terminal windows
 -- Source: https://github.com/akinsho/toggleterm.nvim
@@ -47,3 +53,11 @@ vim.keymap.set("n", "<leader>t", ":NvimTreeFocus<CR>", { noremap = true })
 
 -- search stuff
 vim.keymap.set("n", "<leader>/", ":noh<CR>", { noremap = true, desc = "turn off highlighting" })
+
+-- open url
+vim.keymap.set(
+	"n",
+	"gx",
+	[[:execute '!open ' . shellescape(expand('<cfile>'), 1)<CR>]],
+	{ noremap = true, desc = "follow link" }
+)
