@@ -41,8 +41,6 @@ require("onedark").setup({
 })
 require("onedark").load()
 
-require("toggleterm").setup({})
-
 -- Config indent-blankline
 require("ibl").setup({ indent = { char = "╎" } })
 
