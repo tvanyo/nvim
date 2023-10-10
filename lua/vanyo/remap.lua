@@ -10,6 +10,10 @@ vim.keymap.set("n", "<A-Down>", "<cmd>resize -2<cr>", { desc = "Decrease window 
 vim.keymap.set("n", "<A-Left>", "<cmd>vertical resize -2<cr>", { desc = "Decrease window width" })
 vim.keymap.set("n", "<A-Right>", "<cmd>vertical resize +2<cr>", { desc = "Increase window width" })
 
+-- Closing buffers with ease
+vim.keymap.set("n", "<leader>q", "<cmd>bd<CR>", { desc = "Close Buffer" })
+vim.keymap.set("n", "<leader>w", "<cmd>bp|bd #<CR>", { desc = "Close Buffer; Retain Split" })
+
 -- Moving between terminal and non-terminal windows
 -- Source: https://github.com/akinsho/toggleterm.nvim
 vim.keymap.set("n", "tt", ":ToggleTerm<CR>", { noremap = true, desc = "toggle terminal" })
