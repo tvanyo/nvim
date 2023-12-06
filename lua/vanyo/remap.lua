@@ -45,9 +45,9 @@ vim.keymap.set("n", "<C-u>", "<C-u>zz", { noremap = true })
 -- vim.keymap.set("i", ";t", "<esc>gg", { noremap = true })
 -- vim.keymap.set("i", ";b", "<esc>G", { noremap = true })
 -- vim.keymap.set("n", "<leader>t", "<esc>gg", { noremap = true })
-vim.keymap.set("n", "<leader>b", "<esc>G", { noremap = true })
-vim.keymap.set("v", "<leader>t", "<esc>gg", { noremap = true })
-vim.keymap.set("v", "<leader>b", "<esc>G", { noremap = true })
+-- vim.keymap.set("n", "<leader>b", "<esc>G", { noremap = true })
+-- vim.keymap.set("v", "<leader>t", "<esc>gg", { noremap = true })
+-- vim.keymap.set("v", "<leader>b", "<esc>G", { noremap = true })
 
 -- NvimTree
 vim.keymap.set("n", "<leader>t", ":NvimTreeFocus<CR>", { noremap = true })
@@ -58,6 +58,8 @@ vim.keymap.set("n", "<leader>t", ":NvimTreeFocus<CR>", { noremap = true })
 -- search stuff
 vim.keymap.set("n", "<leader>;", ":noh<CR>", { noremap = true, desc = "turn off highlighting" })
 
+-- Return to previous link in markdown notes
+vim.keymap.set("n", "<bs>", ":edit #<cr>", { silent = true })
 -- open url
 vim.keymap.set(
 	"n",
