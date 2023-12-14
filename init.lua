@@ -39,7 +39,8 @@ require("lazy").setup({
 	-- Practice, Practice, Practice
 	"theprimeagen/vim-be-good",
 
-	"jghauser/follow-md-links.nvim",
+	-- markdown wiki like functionality, originally "jghauser/follow-md-links.nvim", but forked for some fixes
+	"tvanyo/follow-md-links.nvim",
 
 	-- NOTE: This is where your plugins related to LSP can be installed.
 	--  The configuration is done below. Search for lspconfig to find it below.
