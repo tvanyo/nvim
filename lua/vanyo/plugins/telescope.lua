@@ -1,18 +1,40 @@
 -- Fuzzy Finder (files, lsp, etc)
 return {
 	"nvim-telescope/telescope.nvim",
-	version = "*",
-	dependencies = { "nvim-lua/plenary.nvim" },
+	branch = "0.1.x",
+	--version = "*",
+	dependencies = {
+		"nvim-lua/plenary.nvim",
+		{
+			-- if having issues with this stating not installed, open :Lazy, go to telescope-fzf-native, and hit `gb`
+			"nvim-telescope/telescope-fzf-native.nvim",
+			build = "make",
+		},
+		"nvim-tree/nvim-web-devicons",
+	},
 
-	-- Fuzzy Finder Algorithm which requires local dependencies to be built.
-	-- Only load if `make` is available. Make sure you have the system
-	-- requirements installed.
+	config = function()
+		local telescope = require("telescope")
+		local actions = require("telescope.actions")
+		local builtin = require("telescope.builtin")
 
-	"nvim-telescope/telescope-fzf-native.nvim",
-	-- NOTE: If you are having trouble with this installation,
-	--       refer to the README for telescope-fzf-native for more instructions.
-	build = "make",
-	cond = function()
-		return vim.fn.executable("make") == 1
+		telescope.setup({
+			defaults = {
+				path_display = { "truncate " },
+				mappings = {
+					i = {
+						["<C-k>"] = actions.move_selection_previous, -- move to prev result
+						["<C-j>"] = actions.move_selection_next, -- move to next result
+						["<C-q>"] = actions.send_selected_to_qflist + actions.open_qflist,
+					},
+				},
+			},
+		})
+
+		telescope.load_extension("fzf")
+		vim.keymap.set("n", "<leader>ff", builtin.find_files, {})
+		vim.keymap.set("n", "<leader>fg", builtin.live_grep, {})
+		vim.keymap.set("n", "<leader>fb", builtin.buffers, {})
+		vim.keymap.set("n", "<leader>fh", builtin.help_tags, {})
 	end,
 }
