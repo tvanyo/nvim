@@ -5,8 +5,15 @@ return {
 		local lint = require("lint")
 		lint.linters_by_ft = {
 			typescript = { "eslint_d" },
-			python = { "pylint" },
+			shell = { "shellcheck" },
+			python = { "flake8" },
+			-- python = { "pylint" },
 		}
+
+		--- Ignore too many '#' and line length for flake8
+		local flake8 = require("lint").linters.flake8
+		flake8.args = { "--max-line-length", "88", "--ignore", "E266,E501" }
+
 		local lint_augroup = vim.api.nvim_create_augroup("lint", { clear = true })
 
 		vim.api.nvim_create_autocmd({ "BufEnter", "BufWritePost", "InsertLeave" }, {
