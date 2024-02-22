@@ -1,3 +1,4 @@
+-- Original source https://github.com/josean-dev/dev-environment-files/blob/main/.config/nvim/lua/josean/plugins/lsp/lspconfig.lua
 return {
   "neovim/nvim-lspconfig",
   event = { "BufReadPre", "BufNewFile" },
@@ -76,52 +77,10 @@ return {
       on_attach = on_attach,
     })
 
-    -- configure typescript server with plugin
-    lspconfig["tsserver"].setup({
-      capabilities = capabilities,
-      on_attach = on_attach,
-    })
-
     -- configure css server
     lspconfig["cssls"].setup({
       capabilities = capabilities,
       on_attach = on_attach,
-    })
-
-    -- configure tailwindcss server
-    lspconfig["tailwindcss"].setup({
-      capabilities = capabilities,
-      on_attach = on_attach,
-    })
-
-    -- configure svelte server
-    lspconfig["svelte"].setup({
-      capabilities = capabilities,
-      on_attach = function(client, bufnr)
-        on_attach(client, bufnr)
-
-        vim.api.nvim_create_autocmd("BufWritePost", {
-          pattern = { "*.js", "*.ts" },
-          callback = function(ctx)
-            if client.name == "svelte" then
-              client.notify("$/onDidChangeTsOrJsFile", { uri = ctx.file })
-            end
-          end,
-        })
-      end,
-    })
-
-    -- configure prisma orm server
-    lspconfig["prismals"].setup({
-      capabilities = capabilities,
-      on_attach = on_attach,
-    })
-
-    -- configure graphql language server
-    lspconfig["graphql"].setup({
-      capabilities = capabilities,
-      on_attach = on_attach,
-      filetypes = { "graphql", "gql", "svelte", "typescriptreact", "javascriptreact" },
     })
 
     -- configure emmet language server
@@ -135,6 +94,13 @@ return {
     lspconfig["pyright"].setup({
       capabilities = capabilities,
       on_attach = on_attach,
+      settings = {
+        python = {
+          analysis = {
+            diagnosticMode = "openFilesOnly"
+          },
+        },
+      },
     })
 
     -- configure lua server (with special settings)
