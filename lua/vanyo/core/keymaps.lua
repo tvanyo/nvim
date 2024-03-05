@@ -49,6 +49,7 @@ keymap.set(
 
 -- noice keymaps
 keymap.set("n", "<leader>nd", "<cmd>NoiceDismiss<CR>", { desc = "Dismiss noice messages" })
+keymap.set("n", "<leader>nt", "<cmd>Telescope noice<CR>", { desc = "Telescope messages" })
 
 -- telescope keymaps (see ../plugins/telescope.lua)
 local builtin = require("telescope.builtin")
