@@ -10,8 +10,8 @@ vim.opt.shiftwidth = 4
 vim.opt.smarttab = true
 
 -- Getting line numbers the way I like
-vim.wo.number = true
-vim.wo.relativenumber = true
+vim.opt.number = true
+vim.opt.relativenumber = true
 vim.opt.cursorline = true
 vim.opt.cursorlineopt = "number"
 vim.cmd("highlight clear CursorLine")
