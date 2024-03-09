@@ -22,10 +22,11 @@ return {
 		mason_tool_installer.setup({
 			ensure_installed = {
 				"prettier",
+				"clangd",
 				"stylua",
 				"isort",
 				"black",
-				--"pylint",
+				"pyright",
 				"eslint_d",
 			},
 		})
