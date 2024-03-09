@@ -83,6 +83,13 @@ return {
 			on_attach = on_attach,
 		})
 
+		-- configure clangd language server
+		lspconfig["clangd"].setup({
+			capabilities = capabilities,
+			on_attach = on_attach,
+			filetypes = { "cpp", "c", "h", "hpp", "hh" },
+		})
+		--
 		-- configure emmet language server
 		lspconfig["emmet_ls"].setup({
 			capabilities = capabilities,
