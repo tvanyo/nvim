@@ -2,20 +2,29 @@ return {
 	"stevearc/conform.nvim",
 	event = { "BufWritePre", "BufReadPre", "BufNewFile" },
 
+	-- source: https://github.com/fsouza/prettierd?tab=readme-ov-file
+	use_prettierd = function()
+		return {
+			exe = "prettierd",
+			args = { vim.api.nvim_buf_get_name(0) },
+			stdin = true,
+		}
+	end,
+
 	config = function()
 		local conform = require("conform")
 		conform.setup({
 			formatters_by_ft = {
-				javascript = { "prettier" },
-				typescript = { "prettier" },
+				javascript = { "use_prettierd" },
+				typescript = { "use_prettierd" },
 				--javascriptreact = { "prettier" },
 				--typescriptreact = { "prettier" },
 				--svelte = { "prettier" },
-				css = { "prettier" },
-				html = { "prettier" },
-				json = { "prettier" },
-				yaml = { "prettier" },
-				markdown = { "prettier" },
+				css = { "use_prettierd" },
+				html = { "use_prettierd" },
+				json = { "use_prettierd" },
+				yaml = { "use_prettierd" },
+				markdown = { "use_prettierd" },
 				-- graphql = { "prettier" },
 				lua = { "stylua" },
 				python = { "isort", "black" },
@@ -28,7 +37,7 @@ return {
 		})
 
 		-- Source: https://github.com/stevearc/conform.nvim/blob/master/doc/formatter_options.md#prettier
-		require("conform").formatters.prettier = {
+		require("conform").formatters.prettierd = {
 			options = {
 				-- Use a specific prettier parser for a filetype
 				-- Otherwise, prettier will try to infer the parser from the file name
