@@ -15,16 +15,17 @@ return {
 		local conform = require("conform")
 		conform.setup({
 			formatters_by_ft = {
-				javascript = { "use_prettierd" },
-				typescript = { "use_prettierd" },
+				javascript = { "prettier" },
+				typescript = { "prettier" },
 				--javascriptreact = { "prettier" },
 				--typescriptreact = { "prettier" },
 				--svelte = { "prettier" },
-				css = { "use_prettierd" },
-				html = { "use_prettierd" },
-				json = { "use_prettierd" },
-				yaml = { "use_prettierd" },
-				markdown = { "use_prettierd" },
+				css = { "prettier" },
+				html = { "prettier" },
+				json = { "prettier" },
+				yaml = { "prettier" },
+				markdown = { "prettier" },
+				-- markdown = { "use_prettierd" },
 				-- graphql = { "prettier" },
 				lua = { "stylua" },
 				python = { "isort", "black" },
@@ -37,7 +38,8 @@ return {
 		})
 
 		-- Source: https://github.com/stevearc/conform.nvim/blob/master/doc/formatter_options.md#prettier
-		require("conform").formatters.prettierd = {
+		--require("conform").formatters.prettierd = {
+		require("conform").formatters.prettier = {
 			options = {
 				-- Use a specific prettier parser for a filetype
 				-- Otherwise, prettier will try to infer the parser from the file name
