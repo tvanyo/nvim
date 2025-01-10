@@ -19,6 +19,10 @@ keymap.set("n", "<leader>w", "<cmd>bp|bd #<CR>", { desc = "Close Buffer; Retain 
 -- Yanking that makes sense to me
 keymap.set("n", "Y", "yy", { noremap = true, desc = "yank entire line" })
 keymap.set("n", "yy", "y$", { noremap = true, desc = "yank to end of line" })
+--
+-- Pasting from clipboard that makes sense to me
+keymap.set("n", "cp", ":put+<cr>", { noremap = true, desc = "paste from clipboard before line" })
+keymap.set("n", "cP", ":put!+<cr>", { noremap = true, desc = "paste from clipboard after line" })
 
 -- accessing marks
 keymap.set("n", "`", "'", { noremap = true })
