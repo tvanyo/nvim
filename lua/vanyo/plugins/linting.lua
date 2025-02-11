@@ -7,6 +7,7 @@ return {
 			typescript = { "eslint_d" },
 			shell = { "shellcheck" },
 			python = { "flake8" },
+			-- markdown = { "markdownlint" },
 			-- python = { "pylint" },
 		}
 
