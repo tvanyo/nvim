@@ -52,15 +52,15 @@ keymap.set(
 )
 
 -- noice keymaps
-keymap.set("n", "<leader>nd", "<cmd>NoiceDismiss<CR>", { desc = "Dismiss noice messages" })
-keymap.set("n", "<leader>nt", "<cmd>Telescope noice<CR>", { desc = "Telescope messages" })
+-- keymap.set("n", "<leader>nd", "<cmd>NoiceDismiss<CR>", { desc = "Dismiss noice messages" })
+-- keymap.set("n", "<leader>nt", "<cmd>Telescope noice<CR>", { desc = "Telescope messages" })
 
 -- telescope keymaps (see ../plugins/telescope.lua)
-local builtin = require("telescope.builtin")
-keymap.set("n", "<leader>ff", builtin.find_files, { desc = "find files" })
-keymap.set("n", "<leader>fg", builtin.live_grep, { desc = "find with rg" })
-keymap.set("n", "<leader>fb", builtin.buffers, { desc = "find buffers" })
-keymap.set("n", "<leader>fh", builtin.help_tags, { desc = "find help tags" })
+-- local builtin = require("telescope.builtin")
+-- keymap.set("n", "<leader>ff", builtin.find_files, { desc = "find files" })
+-- keymap.set("n", "<leader>fg", builtin.live_grep, { desc = "find with rg" })
+-- keymap.set("n", "<leader>fb", builtin.buffers, { desc = "find buffers" })
+-- keymap.set("n", "<leader>fh", builtin.help_tags, { desc = "find help tags" })
 
 -- linting keymaps (see ../plugins/linting.lua)
 vim.keymap.set("n", "<leader>l", function()
