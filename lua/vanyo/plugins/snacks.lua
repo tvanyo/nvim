@@ -18,35 +18,36 @@ return {
 			prompt = ">> ",
 			ui_select = true,
 			reverse = true,
-			layouts = {
-				default = {
-					layout = {
-						box = "horizontal",
-						backdrop = true,
-						width = 0.8,
-						height = 0.9,
-						border = "none",
-						{
-							box = "vertical",
-							{ win = "list", title = " Results ", title_pos = "center", border = "rounded" },
-							{
-								win = "input",
-								height = 1,
-								border = "rounded",
-								title = "{title} {live} {flags}",
-								title_pos = "center",
-							},
-						},
-						{
-							win = "preview",
-							title = "{preview:Preview}",
-							width = 0.45,
-							border = "rounded",
-							title_pos = "center",
-						},
-					},
-				},
-			},
+			layout = { preset = "telescope" },
+			-- layouts = {
+			-- 	defaults = {
+			-- 		layout = {
+			-- 			box = "horizontal",
+			-- 			backdrop = true,
+			-- 			width = 0.8,
+			-- 			height = 0.9,
+			-- 			border = "none",
+			-- 			{
+			-- 				box = "vertical",
+			-- 				{ win = "list", title = " Results ", title_pos = "center", border = "rounded" },
+			-- 				{
+			-- 					win = "input",
+			-- 					height = 1,
+			-- 					border = "rounded",
+			-- 					title = "{title} {live} {flags}",
+			-- 					title_pos = "center",
+			-- 				},
+			-- 			},
+			-- 			{
+			-- 				win = "preview",
+			-- 				title = "{preview:Preview}",
+			-- 				width = 0.45,
+			-- 				border = "rounded",
+			-- 				title_pos = "center",
+			-- 			},
+			-- 		},
+			-- 	},
+			-- },
 		},
 		notifier = { enabled = true },
 		notify = { enabled = true },
@@ -102,7 +103,7 @@ return {
 		{
 			"<leader>e",
 			function()
-				Snacks.explorer()
+				Snacks.explorer({ layout = "select" })
 			end,
 			desc = "File Explorer",
 		},
@@ -443,12 +444,16 @@ return {
 			end,
 			desc = "Dismiss All Notifications",
 		},
+		--Terminal
 		{
 			"<c-/>",
 			function()
 				Snacks.terminal()
 			end,
+			mode = { "n", "t" },
 			desc = "Toggle Terminal",
 		},
+		{ "<c-j>", [[<C-\><C-n><C-W>j]], mode = "t", desc = "Window Selection: Select Down" },
+		{ "<c-k>", [[<C-\><C-n><C-W>k]], mode = "t", desc = "Window Selection: Select Up" },
 	},
 }
