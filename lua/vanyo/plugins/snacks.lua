@@ -13,6 +13,7 @@ return {
 		indent = { enabled = false },
 		input = { enabled = true },
 		layout = { enabled = true },
+		lazygit = { enabled = true },
 		picker = {
 			enabled = true,
 			prompt = ">> ",
@@ -170,6 +171,13 @@ return {
 				Snacks.picker.git_log_file()
 			end,
 			desc = "Git Log File",
+		},
+		{
+			"<leader>gg",
+			function()
+				Snacks.lazygit()
+			end,
+			desc = "Lazygit",
 		},
 		-- Grep
 		{
