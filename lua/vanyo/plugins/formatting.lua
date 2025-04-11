@@ -19,6 +19,8 @@ return {
 				markdown = { "markdownlint" },
 				-- graphql = { "prettier" },
 				lua = { "stylua" },
+				sh = { "shellharden", "shfmt" },
+				zsh = { "shellharden", "shfmt" },
 				python = { "isort", "black" },
 			},
 			formatters = {
