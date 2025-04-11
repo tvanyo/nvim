@@ -96,6 +96,14 @@ return {
 			on_attach = on_attach,
 			filetypes = { "html", "typescriptreact", "javascriptreact", "css", "sass", "scss", "less", "svelte" },
 		})
+		--
+		-- configure shell language server
+		lspconfig["bashls"].setup({
+			cmd = { "bash-language-server", "start" },
+			capabilities = capabilities,
+			on_attach = on_attach,
+			filetypes = { "sh", "zsh" },
+		})
 
 		-- configure python server
 		lspconfig["pyright"].setup({
