@@ -21,6 +21,8 @@ return {
 
 		mason_tool_installer.setup({
 			ensure_installed = {
+				"shfmt",
+				"shellcheck",
 				"prettier",
 				"clangd",
 				"stylua",
