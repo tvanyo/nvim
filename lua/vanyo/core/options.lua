@@ -42,3 +42,10 @@ vim.opt.splitright = true
 
 -- neorg
 vim.opt.conceallevel = 3
+
+-- diagnostic
+--- virtual_text puts the diagnostic text on the line
+--- virtual_lines puts the diagnostic text below the issue
+--- current_line only displays diagnostics for line with cursor
+---vim.diagnostic.config({ virtual_text = { current_line = true } })
+vim.diagnostic.config({ virtual_lines = { current_line = true } })
