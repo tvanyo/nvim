@@ -1,8 +1,8 @@
 return {
 	"saghen/blink.cmp",
 	-- optional: provides snippets for the snippet source
-	dependencies = { "rafamadriz/friendly-snippets" },
-
+	-- dependencies = { "rafamadriz/friendly-snippets" },
+	dependencies = { "L3MON4D3/LuaSnip", version = "v2.*" },
 	-- use a release tag to download pre-built binaries
 	version = "1.*",
 	-- AND/OR build from source, requires nightly: https://rust-lang.github.io/rustup/concepts/channels.html#working-with-nightly-rust
@@ -10,8 +10,6 @@ return {
 	-- If you use nix, you can build from source using latest nightly rust with:
 	-- build = 'nix run .#build-plugin',
 
-	---@module 'blink.cmp'
-	---@type blink.cmp.Config
 	opts = {
 		-- 'default' (recommended) for mappings similar to built-in completions (C-y to accept)
 		-- 'super-tab' for mappings similar to vscode (tab to accept)
@@ -38,7 +36,7 @@ return {
 
 		menu = {
 			-- Don't automatically show the completion menu
-			auto_show = false,
+			-- auto_show = false,
 
 			-- nvim-cmp style menu
 			draw = {
@@ -49,10 +47,15 @@ return {
 			},
 		},
 
+		snippets = { preset = "luasnip" },
 		-- Default list of enabled providers defined so that you can extend it
 		-- elsewhere in your config, without redefining it, due to `opts_extend`
 		sources = {
-			default = { "lsp", "path", "snippets", "buffer" },
+			-- "lsp": shows completions from the language server, will get a lot of completions
+			-- "path": shows completions for path
+			-- "snippets": shows completions for detected snippets
+			-- "buffer": completions for the buffer
+			default = { "path", "snippets" },
 		},
 
 		-- (Default) Rust fuzzy matcher for typo resistance and significantly better performance
