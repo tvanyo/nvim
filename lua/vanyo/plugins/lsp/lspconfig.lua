@@ -73,7 +73,7 @@ return {
 					[vim.diagnostic.severity.HINT] = "Hint",
 				},
 			},
-			jump = { float = false },
+			jump = { float = true },
 		})
 		-- configure html server
 		lspconfig["html"].setup({
