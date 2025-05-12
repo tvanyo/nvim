@@ -1,6 +1,6 @@
 return {
 	s(
-		{ trig = ";#!", dscr = "Expand into base zsh script code", snippetType = "autosnippet" },
+		{ trig = "#!", dscr = "Expand into base zsh script code" },
 		fmta(
 			[=[
 #!/bin/zsh
