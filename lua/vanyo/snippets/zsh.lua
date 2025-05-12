@@ -9,7 +9,7 @@ main() {
 	<>
 }
 
-if [[ "${BASH_SOURCE[0]}" == "${0}" ]] || [[ "${ZSH_EVAL_CONTEXT}" =~ :file$ ]]; then
+if [[ "${BASH_SOURCE[0]}" == "${0}" ]] || [[ "${ZSH_ARGZERO" == "$0" ]]; then
 	# Script is being executed directly
 	main "$@"
 fi
