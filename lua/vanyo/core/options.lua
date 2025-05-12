@@ -49,3 +49,6 @@ vim.opt.conceallevel = 3
 --- current_line only displays diagnostics for line with cursor
 ---vim.diagnostic.config({ virtual_text = { current_line = true } })
 vim.diagnostic.config({ virtual_lines = { current_line = true } })
+
+-- Force healthcheck to be a floating window
+vim.g.health = { style = "float" }
