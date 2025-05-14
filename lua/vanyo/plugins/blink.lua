@@ -32,17 +32,19 @@ return {
 		},
 
 		-- (Default) Only show the documentation popup when manually triggered
-		completion = { documentation = { auto_show = false } },
+		completion = {
+			documentation = { auto_show = false },
 
-		menu = {
-			-- Don't automatically show the completion menu
-			-- auto_show = false,
+			menu = {
+				-- Don't automatically show the completion menu
+				-- auto_show = false,
 
-			-- nvim-cmp style menu
-			draw = {
-				columns = {
-					{ "label", "label_description", gap = 1 },
-					{ "kind_icon", "kind" },
+				-- nvim-cmp style menu
+				draw = {
+					columns = {
+						{ "label", "label_description", gap = 1 },
+						{ "kind_icon", "kind" },
+					},
 				},
 			},
 		},
