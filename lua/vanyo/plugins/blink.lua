@@ -71,13 +71,12 @@ return {
 				-- nvim-cmp style menu
 				draw = {
 					columns = {
-						{ "label", "label_description", gap = 1 },
-						{ "kind_icon", "kind" },
+						{ "kind_icon", "label", "kind", gap = 2 },
+						--			{ "label", "label_description", gap = 1 },
 					},
 				},
 			},
 		},
-
 		snippets = { preset = "luasnip" },
 		-- Default list of enabled providers defined so that you can extend it
 		-- elsewhere in your config, without redefining it, due to `opts_extend`
