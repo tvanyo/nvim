@@ -55,8 +55,13 @@ return {
 		-- rep(<position>)
 		local rep = require("luasnip.extras").rep
 
-		require("luasnip.loaders.from_lua").lazy_load({ paths = "~/.config/nvim/lua/vanyo/snippets/" })
-
+		-- Thanks, Winblows, for making me have to point to a different directory
+		if vim.uv.os_uname().sysname ~= "Windows_NT" then
+			require("luasnip.loaders.from_lua").lazy_load({ paths = "~/.config/nvim/lua/vanyo/snippets/" })
+		else
+			require("luasnip.loaders.from_lua").lazy_load({ paths = "~/Local Settings/nvim/lua/vanyo/snippets" })
+		end
+		-- require("luasnip.loaders.from_lua").lazy_load({ paths = "~/.config/nvim/lua/vanyo/snippets/" })
 		-- 	ls.add_snippets("lua", {
 		-- 		s(
 		-- 			"req",
