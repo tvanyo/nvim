@@ -61,8 +61,8 @@ return {
 			},
 		},
 
-		-- (Default) Only show the documentation popup when manually triggered
 		completion = {
+			-- (Default) Only show the documentation popup when manually triggered
 			documentation = { auto_show = false },
 			menu = {
 				-- Don't automatically show the completion menu
