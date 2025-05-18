@@ -1,3 +1,11 @@
+vim.g.blink_lspEnable = false
+
+vim.keymap.set({ "n" }, "<leader>bl", function()
+	local temp = vim.g.blink_lspEnable
+	temp = not temp
+	vim.g.blink_lspEnable = temp
+end, { desc = "toggle lsp source for completion" })
+
 return {
 	"saghen/blink.cmp",
 	-- optional: provides snippets for the snippet source

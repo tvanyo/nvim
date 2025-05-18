@@ -4,7 +4,5 @@ vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 vim.g.markdown_recommended_style = 0
 
-vim.g.blink_lspEnable = false
-
 require("vanyo.lazy")
 require("vanyo.core")
