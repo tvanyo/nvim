@@ -76,6 +76,11 @@ vim.keymap.set({ "n", "v" }, "<leader>mp", function()
 	})
 end, { desc = "Format file or range (in visual mode) " })
 
+vim.keymap.set({ "n" }, "<leader>bl", function()
+	local temp = vim.g.blink_lspEnable
+	temp = not temp
+	vim.g.blink_lspEnable = temp
+end, { desc = "toggle lsp source for completion" })
 -- lsp keymaps (see ../plugins/lsp/lspconfig.lua)
 -- These keymaps are still in ../plugins/lsp/lspconfig.lua becaues of the on_attach functionality
 -- Duplicated here just for easy access if necessary

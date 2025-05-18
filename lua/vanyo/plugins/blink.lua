@@ -85,7 +85,21 @@ return {
 			-- "path": shows completions for path
 			-- "snippets": shows completions for detected snippets
 			-- "buffer": completions for the buffer
-			default = { "path", "snippets" },
+			-- default = { "path", "snippets", "buffer" },
+			-- per_filetype = {
+			-- 	python = { inherit_defaults = true, "lsp" },
+			-- 	lua = { inherit_defaults = true, "lsp" },
+			-- },
+			providers = {
+				snippets = { enabled = true },
+				buffer = { enabled = true },
+				path = { enabled = true },
+				lsp = {
+					enabled = function()
+						return vim.g.blink_lspEnable
+					end,
+				},
+			},
 		},
 
 		-- (Default) Rust fuzzy matcher for typo resistance and significantly better performance
@@ -95,5 +109,6 @@ return {
 		-- See the fuzzy documentation for more information
 		fuzzy = { implementation = "prefer_rust_with_warning" },
 	},
-	opts_extend = { "sources.default" },
+	-- opts_extend = { "sources.default" },
+	opts_extend = {},
 }
