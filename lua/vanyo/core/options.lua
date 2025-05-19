@@ -51,4 +51,4 @@ vim.opt.conceallevel = 3
 --vim.diagnostic.config({ virtual_lines = { current_line = true } })
 
 -- Force healthcheck to be a floating window
-vim.g.health = { style = "float" }
+-- vim.g.health = { style = "float" }
