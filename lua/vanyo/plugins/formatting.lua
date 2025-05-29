@@ -25,7 +25,7 @@ return {
 			},
 			formatters = {
 				prettier = {
-					append_args = { "--tab-width", "4" },
+					append_args = { "--tab-width", "4", "--trailing-comma", "es5" },
 				},
 				markdownlint = { args = { "MD007", "4" } },
 			},
