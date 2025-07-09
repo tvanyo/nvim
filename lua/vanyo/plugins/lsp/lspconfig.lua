@@ -81,6 +81,12 @@ return {
 			on_attach = on_attach,
 		})
 
+		lspconfig["ts_ls"].setup({
+			capabilities = capabilities,
+			on_attach = on_attach,
+			filetypes = { "typescript", "javascript" },
+		})
+
 		-- configure css server
 		lspconfig["cssls"].setup({
 			capabilities = capabilities,
