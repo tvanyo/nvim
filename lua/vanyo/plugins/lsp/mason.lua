@@ -29,8 +29,10 @@ return {
 				"isort",
 				"black",
 				"pyright",
+				"bash-language-server",
 				"eslint_d",
 			},
+			auto_update = true,
 		})
 		vim.diagnostic.config({
 			signs = {
