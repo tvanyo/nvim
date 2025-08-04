@@ -76,80 +76,80 @@ return {
 		-- 	jump = { float = true },
 		-- })
 		-- configure html server
-		lspconfig["html"].setup({
-			capabilities = capabilities,
-			on_attach = on_attach,
-		})
+		-- lspconfig["html"].setup({
+		-- 	capabilities = capabilities,
+		-- 	on_attach = on_attach,
+		-- })
 
-		lspconfig["ts_ls"].setup({
-			capabilities = capabilities,
-			on_attach = on_attach,
-			filetypes = { "typescript", "javascript" },
-		})
-
+		-- lspconfig["ts_ls"].setup({
+		-- 	capabilities = capabilities,
+		-- 	on_attach = on_attach,
+		-- 	filetypes = { "typescript", "javascript" },
+		-- })
+		--
 		-- configure css server
-		lspconfig["cssls"].setup({
-			capabilities = capabilities,
-			on_attach = on_attach,
-		})
+		-- lspconfig["cssls"].setup({
+		-- 	capabilities = capabilities,
+		-- 	on_attach = on_attach,
+		-- })
 
 		-- configure clangd language server
-		lspconfig["clangd"].setup({
-			capabilities = capabilities,
-			on_attach = on_attach,
-			filetypes = { "cpp", "c", "h", "hpp", "hh" },
-		})
+		-- lspconfig["clangd"].setup({
+		-- 	capabilities = capabilities,
+		-- 	on_attach = on_attach,
+		-- 	filetypes = { "cpp", "c", "h", "hpp", "hh" },
+		-- })
 		--
 		-- configure emmet language server
-		lspconfig["emmet_ls"].setup({
-			capabilities = capabilities,
-			on_attach = on_attach,
-			filetypes = { "html", "typescriptreact", "javascriptreact", "css", "sass", "scss", "less", "svelte" },
-		})
+		-- lspconfig["emmet_ls"].setup({
+		-- 	capabilities = capabilities,
+		-- 	on_attach = on_attach,
+		-- 	filetypes = { "html", "typescriptreact", "javascriptreact", "css", "sass", "scss", "less", "svelte" },
+		-- })
 		--
 		-- configure shell language server
-		lspconfig["bashls"].setup({
-			cmd = { "bash-language-server", "start" },
-			capabilities = capabilities,
-			on_attach = on_attach,
-			filetypes = { "sh", "zsh" },
-		})
+		-- lspconfig["bashls"].setup({
+		-- 	cmd = { "bash-language-server", "start" },
+		-- 	capabilities = capabilities,
+		-- 	on_attach = on_attach,
+		-- 	filetypes = { "sh", "zsh" },
+		-- })
 
 		-- configure python server
-		lspconfig["pyright"].setup({
-			capabilities = capabilities,
-			on_attach = on_attach,
-			filetypes = { "python" },
-			settings = {
-				python = {
-					analysis = {
-						autoSearchPaths = true,
-						diagnosticMode = "openFilesOnly",
-						useLibraryCodeForTypes = true,
-					},
-				},
-			},
-		})
+		-- lspconfig["pyright"].setup({
+		-- 	capabilities = capabilities,
+		-- 	on_attach = on_attach,
+		-- 	filetypes = { "python" },
+		-- 	settings = {
+		-- 		python = {
+		-- 			analysis = {
+		-- 				autoSearchPaths = true,
+		-- 				diagnosticMode = "openFilesOnly",
+		-- 				useLibraryCodeForTypes = true,
+		-- 			},
+		-- 		},
+		-- 	},
+		-- })
 
 		-- configure lua server (with special settings)
-		lspconfig["lua_ls"].setup({
-			capabilities = capabilities,
-			on_attach = on_attach,
-			settings = { -- custom settings for lua
-				Lua = {
-					-- make the language server recognize "vim" global
-					diagnostics = {
-						globals = { "vim" },
-					},
-					workspace = {
-						-- make language server aware of runtime files
-						library = {
-							[vim.fn.expand("$VIMRUNTIME/lua")] = true,
-							[vim.fn.stdpath("config") .. "/lua"] = true,
-						},
-					},
-				},
-			},
-		})
+		-- lspconfig["lua_ls"].setup({
+		-- 	capabilities = capabilities,
+		-- 	on_attach = on_attach,
+		-- 	settings = { -- custom settings for lua
+		-- 		Lua = {
+		-- 			-- make the language server recognize "vim" global
+		-- 			diagnostics = {
+		-- 				globals = { "vim" },
+		-- 			},
+		-- 			workspace = {
+		-- 				-- make language server aware of runtime files
+		-- 				library = {
+		-- 					[vim.fn.expand("$VIMRUNTIME/lua")] = true,
+		-- 					[vim.fn.stdpath("config") .. "/lua"] = true,
+		-- 				},
+		-- 			},
+		-- 		},
+		-- 	},
+		-- })
 	end,
 }

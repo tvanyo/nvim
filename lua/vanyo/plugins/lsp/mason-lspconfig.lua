@@ -7,9 +7,28 @@ return {
 	},
 	config = function()
 		require("mason").setup()
-		require("mason-lspconfig").setup()
-		-- end,
-		-- config = function()
+		require("mason-lspconfig").setup({
+			ensure_installed = {
+				"pyright",
+				"pylsp",
+				"bashls",
+				"lua_ls",
+				"ts_ls",
+				"clangd",
+			},
+		})
+		vim.lsp.config("pyright", {
+			filetypes = { "python" },
+			settings = {
+				python = {
+					analysis = {
+						autoSearchPaths = true,
+						diagnosticMode = "openFilesOnly",
+						useLibraryCodeForTypes = true,
+					},
+				},
+			},
+		})
 		vim.lsp.config("lua_ls", {
 			settings = {
 				Lua = {
