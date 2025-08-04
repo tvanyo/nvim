@@ -58,23 +58,23 @@ return {
 		--local capabilities = cmp_nvim_lsp.default_capabilities()
 		local capabilities = require("blink.cmp").get_lsp_capabilities()
 
-		vim.diagnostic.config({
-			signs = {
-				text = {
-					[vim.diagnostic.severity.ERROR] = " ",
-					[vim.diagnostic.severity.WARN] = " ",
-					[vim.diagnostic.severity.INFO] = " ",
-					[vim.diagnostic.severity.HINT] = "󰠠 ",
-				},
-				linehl = {
-					[vim.diagnostic.severity.ERROR] = "Error",
-					[vim.diagnostic.severity.WARN] = "Warn",
-					[vim.diagnostic.severity.INFO] = "Info",
-					[vim.diagnostic.severity.HINT] = "Hint",
-				},
-			},
-			jump = { float = true },
-		})
+		-- vim.diagnostic.config({
+		-- 	signs = {
+		-- 		text = {
+		-- 			[vim.diagnostic.severity.ERROR] = " ",
+		-- 			[vim.diagnostic.severity.WARN] = " ",
+		-- 			[vim.diagnostic.severity.INFO] = " ",
+		-- 			[vim.diagnostic.severity.HINT] = "󰠠 ",
+		-- 		},
+		-- 		linehl = {
+		-- 			[vim.diagnostic.severity.ERROR] = "Error",
+		-- 			[vim.diagnostic.severity.WARN] = "Warn",
+		-- 			[vim.diagnostic.severity.INFO] = "Info",
+		-- 			[vim.diagnostic.severity.HINT] = "Hint",
+		-- 		},
+		-- 	},
+		-- 	jump = { float = true },
+		-- })
 		-- configure html server
 		lspconfig["html"].setup({
 			capabilities = capabilities,
