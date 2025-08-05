@@ -44,4 +44,21 @@ return {
 			},
 		})
 	end,
+        vim.lsp.config("pylsp", {
+            settings = {
+                pylsp = {
+                    plugins = {
+                        pycodestyle = { enabled = false },
+                        mccabe = { enabled = false },
+                        pyflakes = { enabled = false },
+                        flake8 = {
+                            enabled = true,
+                            ignore = { "E501" },
+                            maxLineLength = 100,
+                        },
+                    },
+                },
+            },
+        })
+        vim.lsp.config("pyright", {
 }
