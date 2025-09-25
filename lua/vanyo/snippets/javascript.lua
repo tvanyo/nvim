@@ -25,7 +25,7 @@ return {
 		";cld",
 		fmt(
 			[[
-			console.log("*** DEBUG\n{}\n***\n",{})
+			console.log(">>> DEBUG | {}",{})
 			]],
 			{ i(1, "default"), i(2, "default") }
 		)
