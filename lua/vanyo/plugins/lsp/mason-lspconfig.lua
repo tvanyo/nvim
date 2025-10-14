@@ -26,7 +26,7 @@ return {
                         pyflakes = { enabled = false },
                         flake8 = {
                             enabled = true,
-                            ignore = { "E501" },
+                            ignore = { "E501", "E266" },
                             maxLineLength = 100,
                         },
                     },
