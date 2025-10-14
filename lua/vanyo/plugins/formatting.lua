@@ -21,7 +21,8 @@ return {
                 lua = { "stylua" },
                 sh = { "shellharden", "shfmt" },
                 zsh = { "shellharden", "shfmt" },
-                python = { "isort", "black" },
+                python = { "ruff_fix", "ruff_format", "ruff_organize_imports" },
+                -- python = { "isort", "black" },
             },
             formatters = {
                 prettier = {
