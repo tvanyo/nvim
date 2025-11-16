@@ -45,10 +45,10 @@ keymap.set("n", "<leader>;", ":noh<CR>", { noremap = true, desc = "turn off high
 keymap.set("n", "<bs>", ":edit #<cr>", { silent = true })
 -- open url
 keymap.set(
-	"n",
-	"gx",
-	[[:execute '!open ' . shellescape(expand('<cfile>'), 1)<CR>]],
-	{ noremap = true, desc = "follow link" }
+    "n",
+    "gx",
+    [[:execute '!open ' . shellescape(expand('<cfile>'), 1)<CR>]],
+    { noremap = true, desc = "follow link" }
 )
 
 -- noice keymaps
@@ -64,16 +64,21 @@ keymap.set(
 
 -- linting keymaps (see ../plugins/linting.lua)
 vim.keymap.set("n", "<leader>l", function()
-	require("lint").try_lint()
+    require("lint").try_lint()
 end, { desc = "Trigger linting for current file" })
+
+-- toggle signature help
+keymap.set("i", "<C-k>", function()
+    vim.lsp.buf.signature_help()
+end, { silent = true, noremap = true, desc = "Toggle function signature" })
 
 -- formatting keymaps (see ../plugins/formatting.lua)
 vim.keymap.set({ "n", "v" }, "<leader>mp", function()
-	require("conform").format({
-		lsp_fallback = true,
-		async = false,
-		timeout_ms = 1000,
-	})
+    require("conform").format({
+        lsp_fallback = true,
+        async = false,
+        timeout_ms = 1000,
+    })
 end, { desc = "Format file or range (in visual mode) " })
 
 -- lsp keymaps (see ../plugins/lsp/lspconfig.lua)
