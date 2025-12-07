@@ -8,7 +8,7 @@ return {
         -- refer to the configuration section below
         bigfile = { enabled = false },
         dashboard = { enabled = false },
-        explorer = { enabled = true },
+        explorer = { enabled = true, hidden = true },
         image = { enabled = true },
         indent = { enabled = false },
         input = { enabled = true },
@@ -19,8 +19,7 @@ return {
             prompt = ">> ",
             ui_select = true,
             reverse = true,
-            -- layout presets: "telescope", "vertical", "ivy", "dropdown", "sidebar"
-            layout = { preset = "sidebar", layout = { position = "right" } },
+            layout = { preset = "telescope" },
         },
         notifier = { enabled = true },
         notify = { enabled = true },
