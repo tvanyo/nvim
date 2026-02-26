@@ -16,4 +16,20 @@ return {
         },
         jump = { float = true },
     }),
+    vim.lsp.config("pylsp", {
+        settings = {
+            pylsp = {
+                plugins = {
+                    pycodestyle = { enabled = false },
+                    mccabe = { enabled = false },
+                    pyflakes = { enabled = false },
+                    flake8 = {
+                        enabled = true,
+                        ignore = { "E501", "E266" },
+                        maxLineLength = 100,
+                    },
+                },
+            },
+        },
+    }),
 }
