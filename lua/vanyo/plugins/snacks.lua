@@ -9,7 +9,10 @@ return {
         bigfile = { enabled = false },
         dashboard = { enabled = false },
         explorer = { enabled = true, hidden = true },
-        image = { enabled = false, doc = { inline = false, float = true, max_width = 200, max_height = 50 } },
+        image = {
+            enabled = false,
+            doc = { inline = false, float = true, max_width = 200, max_height = 50 },
+        },
         indent = { enabled = false },
         input = { enabled = true },
         layout = { enabled = true },
@@ -33,6 +36,12 @@ return {
         styles = {
             notification = {
                 wo = { wrap = true },
+            },
+            snacks_image = {
+                focusable = false,
+                relative = "editor",
+                row = 0,
+                col = -1,
             },
         },
     },
