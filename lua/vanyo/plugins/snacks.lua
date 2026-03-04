@@ -9,7 +9,7 @@ return {
         bigfile = { enabled = false },
         dashboard = { enabled = false },
         explorer = { enabled = true, hidden = true },
-        image = { enabled = true },
+        image = { enabled = false, doc = { inline = false, float = true, max_width = 200, max_height = 50 } },
         indent = { enabled = false },
         input = { enabled = true },
         layout = { enabled = true },
@@ -415,6 +415,13 @@ return {
                 Snacks.notifier.show_history()
             end,
             desc = "Notification History",
+        },
+        {
+            "<leader>sv",
+            function()
+                Snacks.image.hover()
+            end,
+            desc = "Show image under cursor",
         },
         {
             "<leader>un",
