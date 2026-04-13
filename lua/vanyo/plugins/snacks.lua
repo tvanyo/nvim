@@ -23,6 +23,12 @@ return {
             ui_select = true,
             reverse = true,
             layout = { preset = "telescope" },
+            -- Ensuring that script files are shown in the explorer even if included in a .gitignore file
+            sources = {
+                explorer = {
+                    include = { "*.sh" },
+                },
+            },
         },
         notifier = { enabled = true },
         notify = { enabled = true },
